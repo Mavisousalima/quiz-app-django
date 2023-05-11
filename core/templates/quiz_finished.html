@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block title %}Quiz Finished{% endblock %} {% block content %}
+<div class="container">
+  <div class="mt-5">
+    <h1>Questions right: {{ score }}</h1>
+    <h2>Final score: {{ final_score }}%</h2>
+    <a href="{% url 'home' %}" class="text-white">Go back to the categories</a>
+  </div>
+</div>
+<script>
+  alert("Congratulations! You have finished the quiz!");
+</script>
+{% endblock %}

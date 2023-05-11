@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block title %}Django Quiz App{% endblock %} {% block content %}
+<div class="container">
+  <h1 class="text-center text-white mt-5">Quiz</h1>
+  <div class="question-box col-md-6 m-auto mt-3">
+    <form method="post">
+      {% csrf_token %}
+      <h2>{{ question }}</h2>
+      {% for answer in question.answers.all %}
+      <input type="radio" name="answer" value="{{ answer.id }}" /> {{ answer }}<br />
+      {% endfor %}
+      <p>{{ right_answer }}</p>
+      <a href="{% url 'question_details' %}" class="btn btn-success">Next</a>
+    </form>
+  </div>
+</div>
+{% endblock %}
